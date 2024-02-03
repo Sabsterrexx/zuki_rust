@@ -18,12 +18,12 @@ struct ChatRequestBody {
 
 
 impl ZukiInterface {
-    pub async fn chat_request(&self, messages: Vec<Message>, model: String, temperature: Option<f32>, unfiltered: bool) -> serde_json::Value {
+    pub async fn chat_request(&self, messages: Vec<Message>, model: &str, temperature: Option<f32>, unfiltered: bool) -> serde_json::Value {
         let temperature = temperature.unwrap_or(0.7);
 
         let body = ChatRequestBody {
             messages,
-            model,
+            model: String::from(model),
             temperature
         };
 

@@ -38,6 +38,12 @@ impl ZukiInterface {
             .await
             .unwrap();
 
-        request.json().await.unwrap()
+        let response = request.json().await.unwrap();
+        let content = chat_response["choices"][0]["message"]["content"].as_str();
+
+        match content {
+            Some(c) => c,
+            None => panic!("No content in response")
+        }
     }
 }

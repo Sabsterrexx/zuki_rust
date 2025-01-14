@@ -1,5 +1,7 @@
 pub mod chat_request;
 pub mod image_request;
+pub mod chat_call;
+pub mod image_call;
 
 pub struct ZukiInterface {
     auth: String,

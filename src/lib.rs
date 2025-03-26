@@ -12,7 +12,7 @@ impl ZukiInterface {
     pub fn new(auth: &str) -> ZukiInterface {
         ZukiInterface {
             auth: String::from(auth),
-            base_url: String::from("https://zukijourney.xyzbot.net")
+            base_url: String::from("https://api.zukijourney.com")
         }
     }
 }
